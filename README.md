@@ -1,6 +1,14 @@
 # highschool-python
 파이썬 교과서 코드 예제
 
+## 여기(깃허브)에서 다운받기 
+교과서를 집필할 때 사용했던 파이썬 및 개발 에디터 프로그램입니다. 
+
+* Python 3.6.4(64비트) : https://github.com/progh2/highschool-python/blob/master/install/python-3.6.4-amd64.exe
+
+* Visual Studio Code : https://github.com/progh2/highschool-python/blob/master/install/VSCodeSetup-x64-1.21.1.exe
+  
+
 ## 파이썬 3.6.4 설치
 교과서와 동일한 실행 결과를 위하여 버전을 맞춰서 활용해주세요.
 
