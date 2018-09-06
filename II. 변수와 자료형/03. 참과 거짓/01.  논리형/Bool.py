@@ -1,0 +1,25 @@
+a = True
+b = False
+print(type(a))
+# 비교 연산자, 논리 연산자, 비트 연산자
+print(not True)
+print(not False)
+print(False and False)
+print(False and True)
+print(True and False)
+print(True and True)
+print(False or False)
+print(False or True)
+print(True or False)
+print(True or True)
+# 비트 연산자
+print(bin(0b1010))
+print(bin(0b1010 & 0b0110))
+print(bin(0b1010 | 0b0110))
+print(bin(0b1010 ^ 0b0110))
+print(bin(~0b1010))
+print(~0b1010)
+print(bin(0b1010 << 2))
+print(0b1010 << 2)
+print(bin(0b1010 >> 2))
+print(0b1010 >> 2)
