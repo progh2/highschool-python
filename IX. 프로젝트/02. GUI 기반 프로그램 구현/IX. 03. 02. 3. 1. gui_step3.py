@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import messagebox
+import math
 
 class TicTacToe:
     def __init__(self, start_turn, c):
@@ -10,8 +11,8 @@ class TicTacToe:
 
         self.canvas = c
         self.images = dict()
-        self.images['o'] = tkinter.PhotoImage(file="o.png")
-        self.images['x'] = tkinter.PhotoImage(file="x.png")
+        self.images['o'] = tkinter.PhotoImage(file="o.gif")
+        self.images['x'] = tkinter.PhotoImage(file="x.gif")
 
     def add(self, x, y, c):
         if self.game_end:
@@ -72,6 +73,30 @@ class TicTacToe:
             if (i + 1) % 3 == 0:
                 print('')
 
+    def draw_board(self):
+        size = 100
+        idx = 1
+        x = 0
+        y = 0
+        for item in self.board:
+            if item == '.':
+                pass
+            else:
+                if item == 'O':
+                    self.canvas.create_image(x + 50, y + 50, image=self.images['o'])
+                elif item == 'X':
+                    self.canvas.create_image(x + 50, y + 50, image=self.images['x'])
+
+            x += size
+            if idx % 3 == 0:
+                x = 0
+                y += size
+
+            idx += 1
+
+    def clear_board(self):
+        self.canvas.delete("all")
+
 CANVAS_SIZE = 300
 TILE_SIZE = int(CANVAS_SIZE / 3)
 
@@ -83,9 +108,17 @@ root.resizable(width=False, height=False)
 canvas = tkinter.Canvas(root, bg="white", width=CANVAS_SIZE, height=CANVAS_SIZE)
 canvas.pack()
 
+ttt = TicTacToe('O', canvas)
+
 def click_handler(event):
-    pass
+    ttt.clear_board()
+
+    turn = ttt.get_current_turn()
+    ttt.add(math.floor(event.y / TILE_SIZE), math.floor(event.x / TILE_SIZE), turn)
+
+    ttt.draw_board()
 
 canvas.bind("<Button-1>", click_handler)
 
+ttt.draw_board()
 root.mainloop()

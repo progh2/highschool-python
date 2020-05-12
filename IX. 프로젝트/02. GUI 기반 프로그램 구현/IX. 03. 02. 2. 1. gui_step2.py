@@ -10,8 +10,8 @@ class TicTacToe:
 
         self.canvas = c
         self.images = dict()
-        self.images['o'] = tkinter.PhotoImage(file="o.png")
-        self.images['x'] = tkinter.PhotoImage(file="x.png")
+        self.images['o'] = tkinter.PhotoImage(file="o.gif")
+        self.images['x'] = tkinter.PhotoImage(file="x.gif")
 
     def add(self, x, y, c):
         if self.game_end:
